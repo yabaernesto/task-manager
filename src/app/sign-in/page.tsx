@@ -3,6 +3,7 @@ import { Logo } from '../components/Logo'
 import Link from 'next/link'
 import { Button } from '../components/Button'
 import * as Root from '../components/Form/Input'
+import * as Social from '../components/Form/Social'
 
 const SignIn = () => {
   return (
@@ -11,23 +12,23 @@ const SignIn = () => {
         <Logo className="h-6" />
 
         <div className="mt-8 space-y-2">
-          <div className="w-full flex items-center bg-[#363041]">
-            <span className="bg-violet-500 py-3 px-4 rounded-s-lg">
+          <Social.Root>
+            <Social.SpanIcon>
               <Facebook className="text-white text-xs" />
-            </span>
-            <span className="w-full py-2 px-4 text-sm text-gray-200 cursor-pointer">
+            </Social.SpanIcon>
+            <Social.SpanText>
               <Link href="/aksaksa">Facebook</Link>
-            </span>
-          </div>
+            </Social.SpanText>
+          </Social.Root>
 
-          <div className="w-full flex items-center bg-[#363041]">
-            <span className="bg-violet-500 py-3 px-4 rounded-s-lg">
+          <Social.Root>
+            <Social.SpanIcon>
               <Twitter className="text-white text-xs" />
-            </span>
-            <span className="w-full py-2 px-4 text-sm text-gray-200 cursor-pointer">
+            </Social.SpanIcon>
+            <Social.SpanText>
               <Link href="/aksaksa">Twitter</Link>
-            </span>
-          </div>
+            </Social.SpanText>
+          </Social.Root>
         </div>
 
         <form className="w-full mt-10 space-y-4">
