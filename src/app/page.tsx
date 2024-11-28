@@ -19,7 +19,7 @@ export default function Home() {
             Creative Digital Design Agency is looking for new talent
           </p>
 
-          <Button className="w-36 py-2 px-3 bg-violet-300 hover:bg-violet-400 text-violet-900 hover:text-violet-900 rounded-md">
+          <Button className="w-36">
             <Link href="/sign-up">Sign Up</Link>
           </Button>
         </div>

@@ -1,3 +1,3 @@
-import { Root, Control, Label } from './input'
+import { FormRoot, InputFild, Label } from './input'
 
-export { Root, Control, Label }
+export { FormRoot, InputFild, Label }

@@ -14,7 +14,7 @@ export function Header() {
           <Link href="/resources">Resources</Link>
         </nav>
 
-        <Button className="w-32 py-2 px-3 bg-violet-300 hover:bg-violet-400 text-violet-900 hover:text-violet-900 rounded-md">
+        <Button className="w-32">
           <Link href="/sign-in">Sign In</Link>
         </Button>
       </header>

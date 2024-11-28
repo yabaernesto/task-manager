@@ -1,8 +1,8 @@
-import { ComponentProps, ReactNode } from 'react'
+// biome-ignore lint/style/useImportType: <explanation>
+import { ComponentProps, InputHTMLAttributes, ReactNode } from 'react'
 
-interface LabelProps extends ComponentProps<'label'> {
+interface LabelProps extends InputHTMLAttributes<HTMLInputElement> {
   children: ReactNode
-  htmlFor?: string
 }
 
 export function Label({ children, ...props }: LabelProps) {
@@ -15,10 +15,10 @@ export function Label({ children, ...props }: LabelProps) {
 
 type ControlProps = ComponentProps<'input'>
 
-export function Control(props: ControlProps) {
+export function InputFild(props: ControlProps) {
   return (
     <input
-      className="py-3 px-4 bg-[#363041] w-full outline-none text-sm"
+      className="py-3 px-4 bg-secondary w-full outline-none text-sm"
       {...props}
     />
   )
@@ -26,6 +26,6 @@ export function Control(props: ControlProps) {
 
 type RootProps = ComponentProps<'div'>
 
-export function Root(props: RootProps) {
+export function FormRoot(props: RootProps) {
   return <div {...props} />
 }

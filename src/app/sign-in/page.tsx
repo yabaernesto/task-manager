@@ -9,7 +9,7 @@ const SignIn = () => {
   return (
     <div className="h-screen flex flex-col items-center justify-center">
       <div className="w-96 flex flex-col">
-        <Logo className="h-6" />
+        <Logo className="h-6 -ml-6" />
 
         <div className="mt-8 space-y-2">
           <Social.Root>
@@ -32,28 +32,25 @@ const SignIn = () => {
         </div>
 
         <form className="w-full mt-10 space-y-4">
-          <Root.Root>
+          <Root.FormRoot>
             <Root.Label>Your email</Root.Label>
-            <Root.Control
+            <Root.InputFild
               type="email"
               id="email"
               placeholder="Pleace insert your e-mail adress"
             />
-          </Root.Root>
+          </Root.FormRoot>
 
-          <Root.Root>
+          <Root.FormRoot>
             <Root.Label>Password</Root.Label>
-            <Root.Control
+            <Root.InputFild
               type="password"
               id="password"
               placeholder="Pleace insert your password adress"
             />
-          </Root.Root>
+          </Root.FormRoot>
 
-          <Button
-            type="submit"
-            className="w-full py-2 px-3 bg-violet-300 hover:bg-violet-400 text-violet-900 hover:text-violet-900 rounded-md"
-          >
+          <Button type="submit" className="w-full">
             Sign in
           </Button>
 
