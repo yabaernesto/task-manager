@@ -1,8 +1,8 @@
 # Todo List
 
 - [] Add task
-- [] Remove task
-- [] Task completed
+- [x] Remove task
+- [x] Task completed
 - [] Login
 - [] Logout
 - [] Register

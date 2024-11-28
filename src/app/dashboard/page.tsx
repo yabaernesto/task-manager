@@ -1,5 +1,6 @@
-import { Check, Search, Trash2 } from 'lucide-react'
+import { Search } from 'lucide-react'
 import { Header } from './header/header'
+import { ListTask } from './task/ListTask'
 
 function Dashboard() {
   return (
@@ -27,38 +28,10 @@ function Dashboard() {
             />
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-3.5">
             <h2 className="text-xl font-bold">Tasks - 2</h2>
 
-            <div className="flex gap-2 py-3 px-4 bg-secondary rounded-xl">
-              <div className="h-5 w-5 border border-primaryColor rounded-md cursor-pointer" />
-              <div className="">
-                <h2 className="text-base text-zinc-200 cursor-pointer">
-                  Solve computer logic problems
-                </h2>
-                <span className="text-xs text-primaryColor font-semibold">
-                  Today
-                </span>
-              </div>
-            </div>
-
-            <div className="flex justify-between py-3 px-4 bg-secondary rounded-xl">
-              <div className="flex gap-2">
-                <div className="h-5 w-5 border bg-primaryColor rounded-md flex justify-center items-center cursor-pointer">
-                  <Check className="h-4 w-5 text-zinc-200" />
-                </div>
-                <div className="">
-                  <h2 className="text-base text-zinc-200 line-through cursor-pointer">
-                    Solve computer logic problems
-                  </h2>
-                  <span className="text-xs text-primaryColor font-semibold">
-                    Today
-                  </span>
-                </div>
-              </div>
-
-              <Trash2 className="h-5 w-5 text-zinc-200 cursor-pointer" />
-            </div>
+            <ListTask />
           </div>
         </div>
       </main>
