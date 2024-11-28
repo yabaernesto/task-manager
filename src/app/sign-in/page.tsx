@@ -50,8 +50,8 @@ const SignIn = () => {
             />
           </Root.FormRoot>
 
-          <Button type="submit" className="w-full">
-            Sign in
+          <Button type="button" className="w-full">
+            <Link href="/dashboard">Sign in</Link>
           </Button>
 
           <p className="text-center text-sm text-white cursor-pointer hover:underline">

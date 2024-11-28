@@ -1,16 +1,28 @@
 import { Menu } from 'lucide-react'
-import { Profile } from './profile'
-import { AddTasks } from './AddTasks'
+import { ComponentProps } from 'react'
+import { ButtonAddTasks } from './ButtonAddTask'
 
-export function Header() {
+export function ButtonTask() {
+  return <ButtonAddTasks />
+}
+
+export function MenuBar() {
+  return <Menu className="h-5 w-5 cursor-pointer text-zinc-200" />
+}
+
+type ContainerDivProps = ComponentProps<'div'>
+
+export function ContainerDiv(props: ContainerDivProps) {
+  return <div {...props} className="flex items-center gap-4" />
+}
+
+type RootProps = ComponentProps<'div'>
+
+export function Root(props: RootProps) {
   return (
-    <header className="px-8 py-6 h-20 bg-secondary flex items-center justify-between">
-      <div className="flex items-center gap-4">
-        <Menu className="h-5 w-5 cursor-pointer text-zinc-200" />
-        <AddTasks />
-      </div>
-
-      <Profile src="https://github.com/yabaernesto.png" name="Yaba Ernesto" />
-    </header>
+    <header
+      {...props}
+      className="px-8 py-6 h-20 bg-secondary flex items-center justify-between"
+    />
   )
 }

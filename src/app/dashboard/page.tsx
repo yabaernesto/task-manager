@@ -1,11 +1,19 @@
 import { Search } from 'lucide-react'
-import { Header } from './header/header'
+import { Root, ContainerDiv, ButtonTask } from './header'
 import { ListTask } from './task/ListTask'
+import { Profile } from './header/profile'
+import { MenuBar } from './header/header'
 
 function Dashboard() {
   return (
     <div className="">
-      <Header />
+      <Root>
+        <ContainerDiv>
+          <MenuBar />
+          <ButtonTask />
+        </ContainerDiv>
+        <Profile src="https://github.com/yabaernesto.png" name="Yaba Ernesto" />
+      </Root>
 
       <main className="h-auto mt-14 flex justify-center">
         <div className="h-auto flex flex-col w-areaTask p-4">
