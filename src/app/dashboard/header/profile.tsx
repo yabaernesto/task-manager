@@ -1,3 +1,5 @@
+import Link from 'next/link'
+// biome-ignore lint/style/useImportType: <explanation>
 import { ComponentProps } from 'react'
 
 interface ProfileProps extends ComponentProps<'img'> {
@@ -12,7 +14,7 @@ export function Profile({ name, ...props }: ProfileProps) {
       <div className="flex flex-col text-center">
         <span className="text-white text-sm">{name}</span>
         <span className="text-primaryColor text-xs font-bold cursor-pointer">
-          My account
+          <Link href="/my-account">My account</Link>
         </span>
       </div>
     </div>
