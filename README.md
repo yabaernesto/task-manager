@@ -5,6 +5,3 @@
 - [x] Task completed
 - [x] Search task
 - [x] localStorage
-- [] Login
-- [] Logout
-- [] Register
