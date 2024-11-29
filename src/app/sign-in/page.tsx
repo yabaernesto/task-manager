@@ -102,7 +102,10 @@ const SignIn = () => {
             ) : null}
           </Root.FormRoot>
 
-          <Button type="submit" className="w-full mt-3.5">
+          <Button
+            type="submit"
+            className="w-full p-4 mt-3.5 text-[#2E2938] text-sm"
+          >
             Sign in
           </Button>
 
