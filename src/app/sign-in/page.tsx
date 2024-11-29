@@ -9,6 +9,7 @@ import * as Social from '../components/Form/Social'
 import * as yup from 'yup'
 import { useFormik } from 'formik'
 import { useRouter } from 'next/navigation'
+import { GoogleLogo } from '@phosphor-icons/react'
 
 const SignIn = () => {
   const router = useRouter()
@@ -42,24 +43,28 @@ const SignIn = () => {
       <div className="w-[365px] flex flex-col gap-7">
         <div className="space-y-6">
           <Logo className="h-6 -ml-6" />
+          <div className="space-y-3">
+            <Social.Root>
+              <Social.SpanIcon>
+                <GoogleLogo
+                  className="h-4 w-4 text-[#2E2938] font-bold text-sm"
+                  size={20}
+                />
+              </Social.SpanIcon>
+              <Social.SpanText>
+                <Link href="/aksaksa">Google</Link>
+              </Social.SpanText>
+            </Social.Root>
 
-          <Social.Root>
-            <Social.SpanIcon>
-              <Twitter className="h-5 w-5 text-[#2E2938] fill-[#2E2938] text-xs" />
-            </Social.SpanIcon>
-            <Social.SpanText>
-              <Link href="/aksaksa">Twitter</Link>
-            </Social.SpanText>
-          </Social.Root>
-
-          <Social.Root>
-            <Social.SpanIcon>
-              <Facebook className="h-5 w-5 text-[#2E2938] fill-[#2E2938] text-xs" />
-            </Social.SpanIcon>
-            <Social.SpanText>
-              <Link href="/aksaksa">Facebook</Link>
-            </Social.SpanText>
-          </Social.Root>
+            <Social.Root>
+              <Social.SpanIcon>
+                <Facebook className="h-4 w-4 text-[#2E2938] fill-[#2E2938] text-xs" />
+              </Social.SpanIcon>
+              <Social.SpanText>
+                <Link href="/aksaksa">Facebook</Link>
+              </Social.SpanText>
+            </Social.Root>
+          </div>
         </div>
 
         <form onSubmit={formik.handleSubmit} className="w-full space-y-4">

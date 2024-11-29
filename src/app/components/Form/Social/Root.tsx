@@ -17,7 +17,7 @@ export function SpanText({ children, ...props }: SpanIconOfText) {
 
 export function SpanIcon({ children, ...props }: SpanIconOfText) {
   return (
-    <span {...props} className="bg-[#B4ACF9] py-4 px-4 rounded-s-lg">
+    <span {...props} className="bg-[#B4ACF9] p-4 rounded-s-lg">
       {children}
     </span>
   )
