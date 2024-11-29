@@ -83,9 +83,9 @@ function AddTask() {
       </Root>
 
       <main className="h-96 flex justify-center items-center">
-        <div className="w-[600px] mt-24 p-2">
-          <div className="flex items-center gap-5">
-            <div className="bg-secondary p-4 rounded-full cursor-pointer">
+        <div className="w-[560px] mt-28 p-2 space-y-10">
+          <div className="flex items-center gap-3">
+            <div className="bg-secondary p-3.5 rounded-full cursor-pointer">
               <Link href="/dashboard">
                 <ArrowLeft className="h-5 w-5" />
               </Link>
@@ -97,6 +97,7 @@ function AddTask() {
               </p>
             </div>
           </div>
+
           <form className="mt-4 space-y-6">
             <RootInput.FormRoot>
               <RootInput.Label>Title task</RootInput.Label>
@@ -105,18 +106,19 @@ function AddTask() {
                 onChange={event => setTask(event.target.value)}
                 id="task"
                 placeholder="Insert your task"
+                className="p-5"
               />
             </RootInput.FormRoot>
 
             <RootInput.FormRoot>
               <RootInput.Label>Date</RootInput.Label>
-              <div className="flex items-center py-3 px-4 bg-secondary">
+              <div className="flex items-center py-3 px-4 bg-secondary rounded-md">
                 <input
                   type="text"
                   value={day}
                   onChange={event => setDay(event.target.value)}
                   placeholder="Today"
-                  className="bg-secondary w-full outline-none text-sm"
+                  className="bg-secondary w-full outline-none p-2 text-sm/3 text-zinc-200"
                 />
                 <CalendarDays className="h-5 w-5 text-zinc-200 cursor-pointer" />
               </div>
@@ -125,7 +127,7 @@ function AddTask() {
             <Button
               type="button"
               onClick={addTask}
-              className="w-full text-sm px-2 py-4"
+              className="w-full text-[#2E2938] text-sm px-2 py-4"
             >
               Create Task
             </Button>

@@ -1,5 +1,6 @@
 // biome-ignore lint/style/useImportType: <explanation>
 import { ComponentProps, ReactNode } from 'react'
+import clsx from 'clsx'
 
 type LabelProps = ComponentProps<'label'> & {
   children: ReactNode
@@ -16,10 +17,13 @@ export function Label({ children, ...props }: LabelProps) {
 
 type ControlProps = ComponentProps<'input'>
 
-export function InputFild(props: ControlProps) {
+export function InputFild({ className, ...props }: ControlProps) {
   return (
     <input
-      className="p-4 bg-secondary w-full outline-none text-sm/3 text-zinc-200 rounded-md"
+      className={clsx(
+        'p-4 bg-secondary w-full outline-none text-sm/3 text-zinc-200 rounded-md',
+        className
+      )}
       {...props}
     />
   )

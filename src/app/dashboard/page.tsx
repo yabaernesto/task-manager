@@ -1,4 +1,3 @@
-import { Search } from 'lucide-react'
 import { Root, ContainerDiv, ButtonTask } from './header'
 import { ListTask } from './task/ListTask'
 import { Profile } from './profile/profile'

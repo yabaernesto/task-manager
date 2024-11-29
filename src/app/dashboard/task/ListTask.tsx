@@ -62,8 +62,7 @@ export function ListTask({
 
   return (
     <div className="space-y-4">
-      {/* Título e campo de pesquisa */}
-      <div className="w-full my-8 py-3 px-4 bg-secondary flex items-center gap-2 rounded-lg">
+      <div className="w-full my-8 py-2 px-4 bg-secondary flex items-center gap-2 rounded-lg">
         <span className="h-8 w-8 bg-primaryColor flex justify-center items-center rounded-md">
           <Search className="h-4 w-4 text-white" />
         </span>
