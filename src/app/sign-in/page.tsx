@@ -39,10 +39,10 @@ const SignIn = () => {
 
   return (
     <div className="h-screen flex flex-col items-center justify-center">
-      <div className="w-96 flex flex-col">
-        <Logo className="h-6 -ml-6" />
+      <div className="w-[365px] flex flex-col gap-7">
+        <div className="space-y-6">
+          <Logo className="h-6 -ml-6" />
 
-        <div className="mt-8 space-y-3">
           <Social.Root>
             <Social.SpanIcon>
               <Twitter className="h-5 w-5 text-[#2E2938] fill-[#2E2938] text-xs" />
@@ -62,7 +62,7 @@ const SignIn = () => {
           </Social.Root>
         </div>
 
-        <form onSubmit={formik.handleSubmit} className="w-full mt-10 space-y-4">
+        <form onSubmit={formik.handleSubmit} className="w-full space-y-4">
           <Root.FormRoot>
             <Root.Label>Your email</Root.Label>
             <Root.InputFild
