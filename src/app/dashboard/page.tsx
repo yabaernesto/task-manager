@@ -1,7 +1,7 @@
 import { Search } from 'lucide-react'
 import { Root, ContainerDiv, ButtonTask } from './header'
 import { ListTask } from './task/ListTask'
-import { Profile } from './header/profile'
+import { Profile } from './profile/profile'
 import { MenuBar } from './header/header'
 
 function Dashboard() {
@@ -12,7 +12,11 @@ function Dashboard() {
           <MenuBar />
           <ButtonTask />
         </ContainerDiv>
-        <Profile src="https://github.com/yabaernesto.png" name="Yaba Ernesto" />
+        <Profile
+          className="h-14 w-14 rounded-full cursor-pointer"
+          src="https://github.com/yabaernesto.png"
+          name="Yaba Ernesto"
+        />
       </Root>
 
       <main className="h-auto mt-14 flex justify-center">

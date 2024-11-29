@@ -10,7 +10,7 @@ const button = tv({
     vartiant: {
       primary: 'bg-violet-300 hover:text-violet-900',
       outline: 'bg-zinc-300 border border-zinc-400',
-      ghost: 'border border-zinc-200 text-zinc-700',
+      ghost: 'bg-secondary p-4 w-96 hover:text-zinc-200 text-zinc-400 text-sm',
     },
   },
 

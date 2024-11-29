@@ -1,5 +1,5 @@
 import { Root, ContainerDiv } from '../header'
-import { Profile } from '../header/profile'
+import { Profile } from '../profile/profile'
 import { MenuBar } from '../header/header'
 import { ArrowLeft, CalendarDays } from 'lucide-react'
 import * as RootInput from '../../components/Form/Input'
@@ -13,7 +13,11 @@ function AddTask() {
         <ContainerDiv>
           <MenuBar />
         </ContainerDiv>
-        <Profile src="https://github.com/yabaernesto.png" name="Yaba Ernesto" />
+        <Profile
+          className="h-14 w-14 rounded-full cursor-pointer"
+          src="https://github.com/yabaernesto.png"
+          name="Yaba Ernesto"
+        />
       </Root>
 
       <main className="h-96 flex justify-center items-center">
