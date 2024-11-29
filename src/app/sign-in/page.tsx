@@ -42,22 +42,22 @@ const SignIn = () => {
       <div className="w-96 flex flex-col">
         <Logo className="h-6 -ml-6" />
 
-        <div className="mt-8 space-y-2">
+        <div className="mt-8 space-y-3">
           <Social.Root>
             <Social.SpanIcon>
-              <Facebook className="text-white text-xs" />
+              <Twitter className="h-5 w-5 text-[#2E2938] fill-[#2E2938] text-xs" />
             </Social.SpanIcon>
             <Social.SpanText>
-              <Link href="/aksaksa">Facebook</Link>
+              <Link href="/aksaksa">Twitter</Link>
             </Social.SpanText>
           </Social.Root>
 
           <Social.Root>
             <Social.SpanIcon>
-              <Twitter className="text-white text-xs" />
+              <Facebook className="h-5 w-5 text-[#2E2938] fill-[#2E2938] text-xs" />
             </Social.SpanIcon>
             <Social.SpanText>
-              <Link href="/aksaksa">Twitter</Link>
+              <Link href="/aksaksa">Facebook</Link>
             </Social.SpanText>
           </Social.Root>
         </div>
