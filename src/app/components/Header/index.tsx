@@ -5,7 +5,7 @@ import Link from 'next/link'
 export function Header() {
   return (
     <>
-      <header className="flex items-center justify-between mb-5">
+      <header className="flex items-center justify-between mb-2">
         <Logo className="cursor-pointer" />
 
         <nav className="flex items-center gap-10 text-sm text-gray-200">
@@ -14,9 +14,11 @@ export function Header() {
           <Link href="/resources">Resources</Link>
         </nav>
 
-        <Button className="w-32">
-          <Link href="/sign-in">Sign In</Link>
-        </Button>
+        <Link href="/sign-in">
+          <Button type="button" className="w-32">
+            Sign In
+          </Button>
+        </Link>
       </header>
     </>
   )

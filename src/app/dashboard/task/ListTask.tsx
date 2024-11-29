@@ -25,7 +25,6 @@ export function ListTask({
   const [localTasks, setLocalTasks] = useState<Task[]>([])
   const [searchTerm, setSearchTerm] = useState<string>('')
 
-  // Efeito para recuperar as tarefas do localStorage
   useEffect(() => {
     const storedTasks = localStorage.getItem('tasks')
     if (storedTasks) {
@@ -35,14 +34,12 @@ export function ListTask({
     }
   }, [])
 
-  // Efeito para atualizar o localStorage sempre que as tarefas mudarem
   useEffect(() => {
     if (localTasks.length > 0) {
       localStorage.setItem('tasks', JSON.stringify(localTasks))
     }
   }, [localTasks])
 
-  // Filtra as tarefas com base no termo de pesquisa
   const filteredTasks = localTasks.filter(task =>
     task.title.toLowerCase().includes(searchTerm.toLowerCase())
   )

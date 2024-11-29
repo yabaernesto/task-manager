@@ -5,9 +5,10 @@ import { Hero } from './components/Hero'
 
 export default function Home() {
   return (
-    <div className="pt-10 px-20">
+    <div className="h-screen overflow-hidden pt-8 px-20 space-y-2">
       <Header />
-      <main className="grid grid-cols-2">
+
+      <main className="flex-grow w-full flex items-center justify-between">
         <div className="flex flex-col justify-center">
           <h1 className="text-4xl">
             <span className="text-violet-300 font-bold leading-10">
@@ -24,8 +25,8 @@ export default function Home() {
           </Button>
         </div>
 
-        <div className="">
-          <Hero className="h-96" />
+        <div className="flex items-center h-auto">
+          <Hero className="flex-1 -mt-3.5" />
         </div>
       </main>
     </div>
