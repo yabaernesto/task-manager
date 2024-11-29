@@ -1,6 +1,6 @@
 # Todo List
 
-- [] Add task
+- [x] Add task
 - [x] Remove task
 - [x] Task completed
 - [] Login

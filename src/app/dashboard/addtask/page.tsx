@@ -7,11 +7,59 @@ import { ArrowLeft, CalendarDays } from 'lucide-react'
 import * as RootInput from '../../components/Form/Input'
 import Link from 'next/link'
 import { Button } from '@/app/components/Button'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { ListTask } from './../task/ListTask'
 
 function AddTask() {
   const [task, setTask] = useState('')
   const [day, setDay] = useState('')
+  const [tasks, setTasks] = useState([])
+
+  useEffect(() => {
+    const storedTasks = localStorage.getItem('tasks')
+    if (storedTasks) {
+      setTasks(JSON.parse(storedTasks))
+    }
+  }, [])
+
+  const addTask = () => {
+    if (!day.trim() || !task.trim()) {
+      return alert('Preencha a Tarefa e o Dia!')
+    }
+
+    const newTask = {
+      id: Date.now().toString(),
+      title: task,
+      description: '',
+      isCompleted: false,
+      time: day,
+    }
+
+    const updatedTasks = [...tasks, newTask]
+    setTasks(updatedTasks)
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks))
+
+    setTask('')
+    setDay('')
+  }
+
+  const onTaskClick = (taskId: string) => {
+    const updatedTasks = tasks.map(task => {
+      if (task.id === taskId) {
+        return { ...task, isCompleted: !task.isCompleted }
+      }
+      return task
+    })
+
+    setTasks(updatedTasks)
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks))
+  }
+
+  const onDeleteTaskClick = (taskId: string) => {
+    const updatedTasks = tasks.filter(task => task.id !== taskId)
+    setTasks(updatedTasks)
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks))
+  }
 
   return (
     <div>
@@ -68,19 +116,20 @@ function AddTask() {
 
             <Button
               type="button"
-              onClick={() => {
-                if (!day.trim() || !task.trim()) {
-                  return alert('Preencha a Tarefa e o Dia!')
-                }
-
-                setTask('')
-                setDay('')
-              }}
+              onClick={addTask}
               className="w-full text-sm px-2 py-4"
             >
               Create Task
             </Button>
           </form>
+
+          <div style={{ display: 'none' }}>
+            <ListTask
+              tasks={tasks}
+              onTaskClick={onTaskClick}
+              onDeleteTaskClick={onDeleteTaskClick}
+            />
+          </div>
         </div>
       </main>
     </div>
