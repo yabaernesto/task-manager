@@ -68,11 +68,9 @@ function MyProfile() {
               <User className="h-40 w-44 text-zinc-400 font-semibold" />
             </div>
 
-            <Button className="m-auto" vartiant="ghost">
-              <Link href="/" className="block w-full">
-                Sign out
-              </Link>
-            </Button>
+            <Link href="/" className="text-center">
+              <Button variant="ghost">Sign out</Button>
+            </Link>
           </div>
         </div>
       </main>
