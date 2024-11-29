@@ -10,10 +10,18 @@ import { Button } from '@/app/components/Button'
 import { useState, useEffect } from 'react'
 import { ListTask } from './../task/ListTask'
 
+interface Task {
+  id: string
+  title: string
+  description: string
+  isCompleted: boolean
+  time: string
+}
+
 function AddTask() {
   const [task, setTask] = useState('')
   const [day, setDay] = useState('')
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState<Task[]>([])
 
   useEffect(() => {
     const storedTasks = localStorage.getItem('tasks')
