@@ -1,15 +1,20 @@
-import * as React from 'react'
+// biome-ignore lint/style/useImportType: <explanation>
+import React from 'react'
 
-interface HeroProps extends React.ImgHTMLAttributes<HTMLImageElement> {}
+type HeroProps = React.SVGProps<SVGSVGElement> & {
+  onCopy?: React.ClipboardEventHandler<SVGSVGElement>
+}
 
-export function Hero({ ...rest }: HeroProps) {
+export function Hero({ onCopy, ...rest }: HeroProps) {
   return (
+    // biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
     <svg
       width={584}
       height={584}
       viewBox="0 0 584 584"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      onCopy={onCopy}
       {...rest}
     >
       <path

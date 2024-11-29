@@ -1,12 +1,13 @@
 // biome-ignore lint/style/useImportType: <explanation>
-import { ComponentProps, InputHTMLAttributes, ReactNode } from 'react'
+import { ComponentProps, ReactNode } from 'react'
 
-interface LabelProps extends InputHTMLAttributes<HTMLInputElement> {
+type LabelProps = ComponentProps<'label'> & {
   children: ReactNode
 }
 
 export function Label({ children, ...props }: LabelProps) {
   return (
+    // biome-ignore lint/a11y/noLabelWithoutControl: <explanation>
     <label className="text-violet-300 font-bold text-sm" {...props}>
       {children}
     </label>

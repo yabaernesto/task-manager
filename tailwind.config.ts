@@ -20,15 +20,5 @@ export default {
       },
     },
   },
-  plugins: [
-    function ({ addUtilities }) {
-      addUtilities({
-        '.no-clear': {
-          '&::-webkit-search-cancel-button': {
-            display: 'none',
-          },
-        },
-      })
-    },
-  ],
+  plugins: [],
 } satisfies Config
