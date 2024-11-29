@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { Check, Search, Trash2 } from 'lucide-react'
 
 interface Task {
-  id?: string
+  id: string
   title?: string
   description?: string
   isCompleted?: boolean
@@ -40,8 +40,9 @@ export function ListTask({
     }
   }, [localTasks])
 
-  const filteredTasks = localTasks.filter(task =>
-    task.title.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredTasks = localTasks.filter(
+    task =>
+      task.title?.toLowerCase().includes(searchTerm.toLowerCase()) ?? false
   )
 
   function handleTaskClick(taskId: string) {
