@@ -1,3 +1,5 @@
+'use client'
+
 import { Root, ContainerDiv } from '../header'
 import { Profile } from '../profile/profile'
 import { MenuBar } from '../header/header'
@@ -5,8 +7,12 @@ import { ArrowLeft, CalendarDays } from 'lucide-react'
 import * as RootInput from '../../components/Form/Input'
 import Link from 'next/link'
 import { Button } from '@/app/components/Button'
+import { useState } from 'react'
 
 function AddTask() {
+  const [task, setTask] = useState('')
+  const [day, setDay] = useState('')
+
   return (
     <div>
       <Root>
@@ -35,10 +41,15 @@ function AddTask() {
               </p>
             </div>
           </div>
-          <div className="mt-4 space-y-6">
+          <form className="mt-4 space-y-6">
             <RootInput.FormRoot>
               <RootInput.Label>Title task</RootInput.Label>
-              <RootInput.InputFild id="task" placeholder="Insert your task" />
+              <RootInput.InputFild
+                value={task}
+                onChange={event => setTask(event.target.value)}
+                id="task"
+                placeholder="Insert your task"
+              />
             </RootInput.FormRoot>
 
             <RootInput.FormRoot>
@@ -46,6 +57,8 @@ function AddTask() {
               <div className="flex items-center py-3 px-4 bg-secondary">
                 <input
                   type="text"
+                  value={day}
+                  onChange={event => setDay(event.target.value)}
                   placeholder="Today"
                   className="bg-secondary w-full outline-none text-sm"
                 />
@@ -53,8 +66,21 @@ function AddTask() {
               </div>
             </RootInput.FormRoot>
 
-            <Button className="w-full text-sm px-2 py-4">Create Task</Button>
-          </div>
+            <Button
+              type="button"
+              onClick={() => {
+                if (!day.trim() || !task.trim()) {
+                  return alert('Preencha a Tarefa e o Dia!')
+                }
+
+                setTask('')
+                setDay('')
+              }}
+              className="w-full text-sm px-2 py-4"
+            >
+              Create Task
+            </Button>
+          </form>
         </div>
       </main>
     </div>
