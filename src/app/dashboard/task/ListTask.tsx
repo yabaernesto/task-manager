@@ -62,7 +62,7 @@ export function ListTask({
 
   return (
     <div className="space-y-4">
-      <div className="w-full h-[60px] my-8 py-2 px-4 bg-secondary flex items-center gap-1 rounded-lg">
+      <div className="w-full h-[3.75rem] my-8 py-2 px-4 bg-secondary flex items-center gap-1 rounded-lg">
         <span className="h-10 w-10 bg-primaryColor flex justify-center items-center rounded-md">
           <Search className="h-6 w-6 text-white/80" />
         </span>
@@ -77,7 +77,7 @@ export function ListTask({
 
       <h1 className="text-xl font-bold">Tasks - {filteredTasks.length}</h1>
 
-      <div className="space-y-2 h-[75px]">
+      <div className="space-y-2 h-[4.6875rem]">
         {filteredTasks.length > 0 ? (
           filteredTasks.map(task => (
             <div
@@ -93,7 +93,7 @@ export function ListTask({
                       className={`h-7 w-7 ${task.isCompleted && 'line-through'}`}
                     >
                       <div className="h-7 w-7 border bg-primaryColor rounded-md flex justify-center items-center cursor-pointer">
-                        <Check className="h-4 w-5 text-zinc-200" />
+                        <Check className="h-4 w-5 text-white/80" />
                       </div>
                     </button>
                   </>
@@ -111,7 +111,7 @@ export function ListTask({
                   <button
                     type="button"
                     onClick={() => handleTaskClick(task.id)}
-                    className={`text-lg font-medium text-zinc-200 cursor-pointer ${task.isCompleted && 'line-through'}`}
+                    className={`text-lg font-medium text-white/80 cursor-pointer ${task.isCompleted && 'line-through'}`}
                   >
                     {task.title}
                   </button>
@@ -126,13 +126,13 @@ export function ListTask({
                   type="button"
                   onClick={() => handleDeleteTaskClick(task.id)}
                 >
-                  <Trash2 className="h-5 w-5 text-zinc-200 cursor-pointer" />
+                  <Trash2 className="h-5 w-5 text-white/80 cursor-pointer" />
                 </button>
               )}
             </div>
           ))
         ) : (
-          <p className="text-zinc-200">Nenhuma tarefa disponível</p>
+          <p className="text-white/80">Nenhuma tarefa disponível</p>
         )}
       </div>
     </div>

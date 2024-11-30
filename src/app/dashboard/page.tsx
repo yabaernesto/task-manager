@@ -18,7 +18,7 @@ function Dashboard() {
         />
       </Root>
 
-      <main className="h-[85vh] w-[1004px] flex justify-center items-center m-auto pb-2">
+      <main className="h-[85vh] w-[62.75rem] flex justify-center items-center m-auto pb-2">
         <div className="w-full flex flex-col">
           <div className="space-y-2">
             <h1 className="text-3xl font-bold">My Tasks</h1>

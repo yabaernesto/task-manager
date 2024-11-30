@@ -21,7 +21,7 @@ function MyProfile() {
       </Root>
 
       <main className="h-[85vh] flex justify-center items-center">
-        <div className="w-[540px] flex flex-col space-y-8 m-auto">
+        <div className="w-[33.75rem] flex flex-col space-y-8 m-auto">
           <div className="flex items-center gap-3">
             <div className="h-14 w-14 bg-secondary flex items-center justify-center rounded-full cursor-pointer">
               <Link href="/dashboard">
@@ -67,13 +67,13 @@ function MyProfile() {
                 </div>
               </div>
 
-              <User className="h-[155px] w-36 text-zinc-400 font-semibold" />
+              <User className="h-[9.6875rem] w-36 text-white/80 font-semibold" />
             </div>
 
             <Link href="/" className="text-center">
               <Button
                 variant="ghost"
-                className="h-[60px] w-[381px] font-medium text-lg mt-8"
+                className="h-[3.75rem] w-[23.8125rem] font-medium text-lg mt-8"
               >
                 Sign out
               </Button>

@@ -18,7 +18,7 @@ export function Profile({ name, className, ...props }: ProfileProps) {
           <Link href="/dashboard/profile" className="text-xs font-bold">
             My account
           </Link>
-          <ArrowRight className="w-3 h-3 text-zinc-100" />
+          <ArrowRight className="w-3 h-3 text-white/80" />
         </span>
       </div>
     </div>

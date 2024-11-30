@@ -83,7 +83,7 @@ function AddTask() {
       </Root>
 
       <main className="h-[85vh] flex justify-center items-center">
-        <div className="w-[603px] flex flex-col p-2 space-y-10 m-auto">
+        <div className="w-[37.6875rem] flex flex-col p-2 space-y-10 m-auto">
           <div className="flex items-center gap-3">
             <div className="h-14 w-14 bg-secondary flex items-center justify-center rounded-full cursor-pointer">
               <Link href="/dashboard">
@@ -110,13 +110,13 @@ function AddTask() {
                   onChange={event => setTask(event.target.value)}
                   id="task"
                   placeholder="Insert your task"
-                  className="h-[60px]"
+                  className="h-[3.75rem]"
                 />
               </RootInput.FormRoot>
 
               <RootInput.FormRoot>
                 <RootInput.Label>Date</RootInput.Label>
-                <div className="flex items-center h-[60px] py-3 px-4 bg-secondary rounded-md">
+                <div className="flex items-center h-[3.75rem] py-3 px-4 bg-secondary rounded-md">
                   <input
                     type="text"
                     value={day}
@@ -132,7 +132,7 @@ function AddTask() {
             <Button
               type="button"
               onClick={addTask}
-              className="h-[60px] w-full text-[#2E2938] font-medium text-lg"
+              className="h-[3.75rem] w-full text-[#2E2938] font-medium text-lg"
             >
               Create Task
             </Button>
