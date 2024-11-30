@@ -9,24 +9,27 @@ export default function Home() {
       <Header />
 
       <main className="flex-grow w-full flex items-center justify-between">
-        <div className="flex flex-col justify-center">
-          <h1 className="text-4xl">
-            <span className="text-violet-300 font-bold leading-10">
-              Creative Digital
-            </span>{' '}
-            Design Agency <br /> is looking for new talent
-          </h1>
-          <p className="my-5">
-            Creative Digital Design Agency is looking for new talent
-          </p>
+        <div className="flex flex-col space-y-10">
+          <div className="space-y-6">
+            <h1 className="text-4xl font-bold">
+              <span className="text-violet-300 font-bold leading-10">
+                Creative Digital
+              </span>{' '}
+              Design Agency <br /> is looking for new talent
+            </h1>
 
-          <Button className="w-36">
-            <Link href="/sign-up">Sign Up</Link>
-          </Button>
+            <p className="font-bold text-lg text-white/80">
+              Creative Digital Design Agency is looking for new talent
+            </p>
+          </div>
+
+          <Link href="/sign-up" className="font-medium text-lg">
+            <Button className="w-[158px] h-12">Sign Up</Button>
+          </Link>
         </div>
 
         <div className="flex items-center h-auto">
-          <Hero className="flex-1 -mt-3.5" />
+          <Hero className="flex-1 w-[584px] h-[584px]" />
         </div>
       </main>
     </div>
