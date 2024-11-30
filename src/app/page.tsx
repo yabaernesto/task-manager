@@ -29,7 +29,7 @@ export default function Home() {
         </div>
 
         <div className="flex items-center h-auto">
-          <Hero className="flex-1 w-[584px] h-[584px]" />
+          <Hero className="flex-1 w-[486px] h-[430px]" />
         </div>
       </main>
     </div>
