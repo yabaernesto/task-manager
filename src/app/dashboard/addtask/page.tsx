@@ -83,7 +83,7 @@ function AddTask() {
       </Root>
 
       <main className="h-[85vh] flex justify-center items-center">
-        <div className="w-[603px] flex flex-col p-2 space-y-10 m-auto border-red-700">
+        <div className="w-[603px] flex flex-col p-2 space-y-10 m-auto">
           <div className="flex items-center gap-3">
             <div className="h-14 w-14 bg-secondary flex items-center justify-center rounded-full cursor-pointer">
               <Link href="/dashboard">

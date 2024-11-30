@@ -20,17 +20,17 @@ function MyProfile() {
         />
       </Root>
 
-      <main className="h-[525px] flex justify-center items-center">
-        <div className="w-[500px] p-2 space-y-5">
-          <div className="flex items-center gap-5">
-            <div className="bg-secondary p-4 rounded-full cursor-pointer">
+      <main className="h-[85vh] flex justify-center items-center">
+        <div className="w-[540px] flex flex-col space-y-8 m-auto">
+          <div className="flex items-center gap-3">
+            <div className="h-14 w-14 bg-secondary flex items-center justify-center rounded-full cursor-pointer">
               <Link href="/dashboard">
-                <ArrowLeft className="h-5 w-5" />
+                <ArrowLeft className="h-5 text-white/80" />
               </Link>
             </div>
             <div className="space-y-1">
               <h1 className="text-3xl font-bold">My Profile</h1>
-              <p className="text-zinc-200 text-base">Preview my informations</p>
+              <p className="text-white/80 text-lg">Preview my informations</p>
             </div>
           </div>
 
@@ -42,34 +42,41 @@ function MyProfile() {
                 className="h-20 w-20 rounded-full cursor-pointer"
               />
               <div className="flex flex-col text-center">
-                <span className="text-white text-xl">Yaba Ernesto</span>
-                <span className="mr-auto text-primaryColor text-xs font-bold cursor-pointer">
-                  <Link href="/my-account">My account</Link>
+                <span className="text-white text-2xl font-medium">
+                  Yaba Ernesto
                 </span>
+                <Link href="/my-account" className="mr-auto">
+                  <span className="text-[#B4ACF9] text-xs font-bold cursor-pointer">
+                    My account
+                  </span>
+                </Link>
               </div>
             </div>
 
-            <div className="flex items-center justify-between p-2">
-              <div className="space-y-1">
+            <div className="flex items-center justify-between">
+              <div>
                 <div>
-                  <span className="text-zinc-400 text-xs font-semibold">
+                  <span className="text-white/80 text-xs font-bold">
                     Display name
                   </span>
-                  <h3 className="text-base">Yaba Ernesto</h3>
+                  <h3 className="text-lg font-medium">Yaba Ernesto</h3>
                 </div>
                 <div>
-                  <span className="text-zinc-400 text-xs font-semibold">
-                    email
-                  </span>
-                  <h3 className="text-base">yabaernesto</h3>
+                  <span className="text-white/80 text-xs font-bold">email</span>
+                  <h3 className="text-lg font-medium">yabaernesto@gmail.com</h3>
                 </div>
               </div>
 
-              <User className="h-40 w-44 text-zinc-400 font-semibold" />
+              <User className="h-[155px] w-36 text-zinc-400 font-semibold" />
             </div>
 
             <Link href="/" className="text-center">
-              <Button variant="ghost">Sign out</Button>
+              <Button
+                variant="ghost"
+                className="h-[60px] w-[381px] font-medium text-lg mt-8"
+              >
+                Sign out
+              </Button>
             </Link>
           </div>
         </div>
