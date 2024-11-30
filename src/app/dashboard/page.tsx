@@ -21,8 +21,8 @@ function Dashboard() {
       <main className="h-auto mt-14 flex justify-center">
         <div className="h-auto flex flex-col w-areaTask p-4">
           <div className="space-y-2">
-            <h1 className="text-2xl font-bold">My Tasks</h1>
-            <p className="text-sm text-zinc-200">
+            <h1 className="text-3xl font-bold">My Tasks</h1>
+            <p className="font-medium text-lg text-zinc-200">
               Register your tasks and have a better monitoring of your
               activities
             </p>

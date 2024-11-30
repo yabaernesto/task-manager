@@ -1,3 +1,4 @@
+// biome-ignore lint/style/useImportType: <explanation>
 import { ComponentProps, ReactNode } from 'react'
 
 interface SpanIconOfText extends ComponentProps<'label'> {
@@ -8,7 +9,7 @@ export function SpanText({ children, ...props }: SpanIconOfText) {
   return (
     <span
       {...props}
-      className="w-full py-2 px-4 text-sm text-gray-200 cursor-pointer"
+      className="w-full py-2 px-4 font-medium text-base text-gray-200 cursor-pointer"
     >
       {children}
     </span>
@@ -17,7 +18,10 @@ export function SpanText({ children, ...props }: SpanIconOfText) {
 
 export function SpanIcon({ children, ...props }: SpanIconOfText) {
   return (
-    <span {...props} className="bg-[#B4ACF9] p-4 rounded-s-lg">
+    <span
+      {...props}
+      className="h-[60px] w-16 flex items-center justify-center bg-[#B4ACF9] rounded-s-lg"
+    >
       {children}
     </span>
   )
@@ -29,7 +33,7 @@ export function Root(props: RootProps) {
   return (
     <div
       {...props}
-      className="w-full flex items-center bg-[#363041] rounded-md"
+      className="w-full h-[60px] flex items-center bg-[#363041] rounded-md"
     />
   )
 }

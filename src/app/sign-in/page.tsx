@@ -40,14 +40,14 @@ const SignIn = () => {
 
   return (
     <div className="h-screen flex flex-col items-center justify-center">
-      <div className="w-[365px] flex flex-col gap-7">
+      <div className="w-[365px] flex flex-col gap-5">
         <div className="space-y-6">
           <Logo className="h-6 -ml-6" />
           <div className="space-y-3">
             <Social.Root>
               <Social.SpanIcon>
                 <GoogleLogo
-                  className="h-4 w-4 text-[#2E2938] font-bold text-sm"
+                  className="h-6 w-6 text-[#2E2938] font-bold"
                   size={20}
                 />
               </Social.SpanIcon>
@@ -58,7 +58,7 @@ const SignIn = () => {
 
             <Social.Root>
               <Social.SpanIcon>
-                <Facebook className="h-4 w-4 text-[#2E2938] fill-[#2E2938] text-xs" />
+                <Facebook className="h-6 w-6 text-[#2E2938] font-bold fill-[#2E2938]" />
               </Social.SpanIcon>
               <Social.SpanText>
                 <Link href="/aksaksa">Facebook</Link>
@@ -67,51 +67,57 @@ const SignIn = () => {
           </div>
         </div>
 
-        <form onSubmit={formik.handleSubmit} className="w-full space-y-4">
-          <Root.FormRoot>
-            <Root.Label>Your email</Root.Label>
-            <Root.InputFild
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Please insert your e-mail address"
-              value={formik.values.email}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            {formik.touched.email && formik.errors.email ? (
-              <div className="text-red-500 text-sm">{formik.errors.email}</div>
-            ) : null}
-          </Root.FormRoot>
+        <form onSubmit={formik.handleSubmit} className="w-full space-y-5">
+          <div className="mb-2 space-y-8">
+            <Root.FormRoot>
+              <Root.Label>Your email</Root.Label>
+              {formik.touched.email && formik.errors.email ? (
+                <div className="text-red-500 text-xs">
+                  {formik.errors.email}
+                </div>
+              ) : null}
+              <Root.InputFild
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Please insert your e-mail address"
+                value={formik.values.email}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              />
+            </Root.FormRoot>
 
-          <Root.FormRoot>
-            <Root.Label>Password</Root.Label>
-            <Root.InputFild
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Please insert your password"
-              value={formik.values.password}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            {formik.touched.password && formik.errors.password ? (
-              <div className="text-red-500 text-sm">
-                {formik.errors.password}
-              </div>
-            ) : null}
-          </Root.FormRoot>
+            <Root.FormRoot>
+              <Root.Label>Password</Root.Label>
+              <Root.InputFild
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Please insert your password"
+                value={formik.values.password}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              />
+              {formik.touched.password && formik.errors.password ? (
+                <div className="text-red-500 text-xs">
+                  <p>{formik.errors.password}</p>
+                </div>
+              ) : null}
+            </Root.FormRoot>
+          </div>
 
-          <Button
-            type="submit"
-            className="w-full p-4 mt-3.5 text-[#2E2938] text-sm"
-          >
-            Sign in
-          </Button>
+          <div className="space-y-5">
+            <Button
+              type="submit"
+              className="w-full h-[60px] mt-4 text-[#2E2938] font-medium text-sm"
+            >
+              Sign in
+            </Button>
 
-          <p className="text-center text-sm text-white cursor-pointer hover:underline">
-            Não tens uma conta? Criar conta agora.
-          </p>
+            <p className="text-center text-base text-white cursor-pointer hover:underline">
+              Não tens uma conta? Criar conta agora.
+            </p>
+          </div>
         </form>
       </div>
     </div>

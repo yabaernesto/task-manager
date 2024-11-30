@@ -7,7 +7,7 @@ export function ButtonTask() {
 }
 
 export function MenuBar() {
-  return <Menu className="h-5 w-5 cursor-pointer text-zinc-200" />
+  return <Menu className="text-2xl h-6 cursor-pointer text-zinc-400" />
 }
 
 type ContainerDivProps = ComponentProps<'div'>
