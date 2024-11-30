@@ -14,10 +14,6 @@ export default {
         primaryColor: '#b4acf9',
         secondary: '#363041',
       },
-
-      width: {
-        areaTask: '62rem',
-      },
     },
   },
   plugins: [],

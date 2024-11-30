@@ -5,7 +5,7 @@ import { MenuBar } from './header/header'
 
 function Dashboard() {
   return (
-    <div className="">
+    <>
       <Root>
         <ContainerDiv>
           <MenuBar />
@@ -18,22 +18,20 @@ function Dashboard() {
         />
       </Root>
 
-      <main className="h-auto mt-14 flex justify-center">
-        <div className="h-auto flex flex-col w-areaTask p-4">
+      <main className="h-[85vh] w-[1004px] flex justify-center items-center m-auto pb-2">
+        <div className="w-full flex flex-col">
           <div className="space-y-2">
             <h1 className="text-3xl font-bold">My Tasks</h1>
-            <p className="font-medium text-lg text-zinc-200">
+            <p className="font-medium text-lg text-white/80">
               Register your tasks and have a better monitoring of your
               activities
             </p>
           </div>
 
-          <div className="space-y-3.5">
-            <ListTask />
-          </div>
+          <ListTask />
         </div>
       </main>
-    </div>
+    </>
   )
 }
 

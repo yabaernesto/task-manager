@@ -62,22 +62,21 @@ export function ListTask({
 
   return (
     <div className="space-y-4">
-      <div className="w-full h-14 my-8 py-2 px-4 bg-secondary flex items-center gap-2 rounded-lg">
-        <span className="h-8 w-8 bg-primaryColor flex justify-center items-center rounded-md">
-          <Search className="h-4 w-4 text-white" />
+      <div className="w-full h-[60px] my-8 py-2 px-4 bg-secondary flex items-center gap-1 rounded-lg">
+        <span className="h-10 w-10 bg-primaryColor flex justify-center items-center rounded-md">
+          <Search className="h-6 w-6 text-white/80" />
         </span>
         <input
           type="search"
           value={searchTerm}
           onChange={e => setSearchTerm(e.target.value)}
           placeholder="Find of tasks"
-          className="w-full p-1 bg-secondary text-sm text-zinc-200 no-clear outline-none"
+          className="w-full p-1 bg-secondary text-xs text-white/80 no-clear outline-none"
         />
       </div>
 
       <h1 className="text-xl font-bold">Tasks - {filteredTasks.length}</h1>
 
-      {/* Exibição das tarefas */}
       <div className="space-y-2 h-[75px]">
         {filteredTasks.length > 0 ? (
           filteredTasks.map(task => (
@@ -87,11 +86,25 @@ export function ListTask({
             >
               <div className="flex gap-2">
                 {task.isCompleted ? (
-                  <div className="h-5 w-5 border bg-primaryColor rounded-md flex justify-center items-center cursor-pointer">
-                    <Check className="h-4 w-5 text-zinc-200" />
-                  </div>
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => handleTaskClick(task.id)}
+                      className={`h-7 w-7 ${task.isCompleted && 'line-through'}`}
+                    >
+                      <div className="h-7 w-7 border bg-primaryColor rounded-md flex justify-center items-center cursor-pointer">
+                        <Check className="h-4 w-5 text-zinc-200" />
+                      </div>
+                    </button>
+                  </>
                 ) : (
-                  <div className="h-5 w-5 border border-primaryColor rounded-md cursor-pointer" />
+                  <button
+                    type="button"
+                    onClick={() => handleTaskClick(task.id)}
+                    className={`h-7 w-7 ${task.isCompleted && 'line-through'}`}
+                  >
+                    <div className="h-7 w-7 border border-primaryColor rounded-md cursor-pointer" />
+                  </button>
                 )}
 
                 <div className="flex flex-col">
