@@ -82,52 +82,57 @@ function AddTask() {
         />
       </Root>
 
-      <main className="h-96 flex justify-center items-center">
-        <div className="w-[560px] mt-28 p-2 space-y-10">
+      <main className="h-[85vh] flex justify-center items-center">
+        <div className="w-[603px] flex flex-col p-2 space-y-10 m-auto border-red-700">
           <div className="flex items-center gap-3">
-            <div className="bg-secondary p-3.5 rounded-full cursor-pointer">
+            <div className="h-14 w-14 bg-secondary flex items-center justify-center rounded-full cursor-pointer">
               <Link href="/dashboard">
-                <ArrowLeft className="h-5 w-5" />
+                <ArrowLeft className="h-5 text-white/80" />
               </Link>
             </div>
+
             <div className="space-y-1">
-              <h1 className="text-2xl font-bold">Add Task</h1>
-              <p className="text-zinc-200 text-sm">
+              <h1 className="text-3xl font-bold">Add Task</h1>
+              <p className="font-medium text-lg text-white/80">
                 Add your tasks to be registered.
               </p>
             </div>
           </div>
 
-          <form className="mt-4 space-y-6">
-            <RootInput.FormRoot>
-              <RootInput.Label>Title task</RootInput.Label>
-              <RootInput.InputFild
-                value={task}
-                onChange={event => setTask(event.target.value)}
-                id="task"
-                placeholder="Insert your task"
-                className="p-5"
-              />
-            </RootInput.FormRoot>
-
-            <RootInput.FormRoot>
-              <RootInput.Label>Date</RootInput.Label>
-              <div className="flex items-center py-3 px-4 bg-secondary rounded-md">
-                <input
-                  type="text"
-                  value={day}
-                  onChange={event => setDay(event.target.value)}
-                  placeholder="Today"
-                  className="bg-secondary w-full outline-none p-2 text-sm/3 text-zinc-200"
+          <form className="space-y-2">
+            <div className="space-y-4 mb-8">
+              <RootInput.FormRoot className="space-y-1">
+                <RootInput.Label className="font-medium">
+                  Title task
+                </RootInput.Label>
+                <RootInput.InputFild
+                  value={task}
+                  onChange={event => setTask(event.target.value)}
+                  id="task"
+                  placeholder="Insert your task"
+                  className="h-[60px]"
                 />
-                <CalendarDays className="h-5 w-5 text-zinc-200 cursor-pointer" />
-              </div>
-            </RootInput.FormRoot>
+              </RootInput.FormRoot>
+
+              <RootInput.FormRoot>
+                <RootInput.Label>Date</RootInput.Label>
+                <div className="flex items-center h-[60px] py-3 px-4 bg-secondary rounded-md">
+                  <input
+                    type="text"
+                    value={day}
+                    onChange={event => setDay(event.target.value)}
+                    placeholder="Today"
+                    className="bg-secondary font-medium text-xs w-full outline-none text-white/80"
+                  />
+                  <CalendarDays className="h-5 w-5 text-white/80 cursor-pointer" />
+                </div>
+              </RootInput.FormRoot>
+            </div>
 
             <Button
               type="button"
               onClick={addTask}
-              className="w-full text-[#2E2938] text-sm px-2 py-4"
+              className="h-[60px] w-full text-[#2E2938] font-medium text-lg"
             >
               Create Task
             </Button>
