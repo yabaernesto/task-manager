@@ -5,7 +5,7 @@ import { Hero } from './components/Hero'
 
 export default function Home() {
   return (
-    <section className="px-10 lg:w-full lg:px-20 lg:m-auto">
+    <section className="px-6 lg:w-full lg:px-20 lg:m-auto">
       <div className="pt-8 lg:h-screen lg:overflow-hidden lg:space-y-2">
         <Header />
 
@@ -38,7 +38,7 @@ export default function Home() {
           </div>
 
           <div className="flex-1 flex justify-center items-center">
-            <Hero className="w-[30.375rem] h-[30rem]" />
+            <Hero className="w-[30rem] h-[30rem]" />
           </div>
         </main>
       </div>

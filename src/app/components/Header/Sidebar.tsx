@@ -11,7 +11,7 @@ interface SidebarProps {
 export function Sidebar({ isOpen, onClose }: SidebarProps) {
   return (
     <div
-      className={`fixed flex flex-col items-center top-0 left-0 w-full h-screen bg-[#B4ACF9] transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
+      className={`fixed flex flex-col items-center top-0 left-0 w-full h-full bg-[#B4ACF9] transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
     >
       <button
         type="button"

@@ -39,7 +39,7 @@ const SignIn = () => {
   })
 
   return (
-    <section className="container">
+    <section className="px-6 lg:w-full lg:px-20 lg:m-auto">
       <div className="h-screen flex flex-col items-center justify-center">
         <div className="w-[365px] flex flex-col gap-5">
           <div className="space-y-6">
@@ -69,11 +69,6 @@ const SignIn = () => {
             <div className="mb-2 space-y-8">
               <Root.FormRoot>
                 <Root.Label>Your email</Root.Label>
-                {formik.touched.email && formik.errors.email ? (
-                  <div className="text-red-500 text-xs">
-                    {formik.errors.email}
-                  </div>
-                ) : null}
                 <Root.InputFild
                   type="email"
                   id="email"
@@ -83,6 +78,11 @@ const SignIn = () => {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                 />
+                {formik.touched.email && formik.errors.email ? (
+                  <div className="text-red-500 text-xs">
+                    {formik.errors.email}
+                  </div>
+                ) : null}
               </Root.FormRoot>
 
               <Root.FormRoot>
