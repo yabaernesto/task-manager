@@ -1,14 +1,30 @@
+'use client'
+
 import { Root, ContainerDiv, ButtonTask } from './header'
 import { ListTask } from './task/ListTask'
 import { Profile } from './profile/profile'
 import { MenuBar } from './header/header'
+import { SidebarTasks } from './task/SidebarTasks'
+import { useState } from 'react'
 
 function Dashboard() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  function handleOpenModal() {
+    setIsOpen(true)
+  }
+
+  function handleCloseModal() {
+    setIsOpen(false)
+  }
+
   return (
     <>
       <Root>
         <ContainerDiv>
-          <MenuBar />
+          <button type="button" onClick={handleOpenModal}>
+            <MenuBar />
+          </button>
           <ButtonTask />
         </ContainerDiv>
         <Profile
@@ -31,6 +47,8 @@ function Dashboard() {
           <ListTask />
         </div>
       </main>
+
+      <SidebarTasks isOpen={isOpen} onClose={handleCloseModal} />
     </>
   )
 }
