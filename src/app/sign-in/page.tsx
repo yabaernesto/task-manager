@@ -41,7 +41,7 @@ const SignIn = () => {
   return (
     <section className="px-6 lg:w-full lg:px-20 lg:m-auto">
       <div className="h-screen flex flex-col items-center justify-center">
-        <div className="w-[365px] flex flex-col gap-5">
+        <div className="w-auto lg:w-96 p-2 flex flex-col gap-5">
           <div className="space-y-6">
             <Logo className="h-6 -ml-6" />
             <div className="space-y-3">
