@@ -1,4 +1,5 @@
 import { Menu } from 'lucide-react'
+// biome-ignore lint/style/useImportType: <explanation>
 import { ComponentProps } from 'react'
 import { ButtonAddTasks } from './ButtonAddTask'
 
