@@ -40,7 +40,7 @@ const SignIn = () => {
 
   return (
     <div className="h-screen flex flex-col items-center justify-center">
-      <div className="border border-green-600 w-full flex flex-col gap-5 px-3 lg:w-96 lg:p-2">
+      <div className="w-full flex flex-col gap-5 px-3 lg:w-96 lg:p-2">
         <div className="space-y-6">
           <Logo className="h-6 -ml-6" />
           <div className="space-y-3">
