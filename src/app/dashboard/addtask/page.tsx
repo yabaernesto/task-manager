@@ -83,17 +83,17 @@ function AddTask() {
       </Root>
 
       <main className="h-[85vh] flex justify-center items-center">
-        <div className="w-[37.6875rem] flex flex-col p-2 space-y-10 m-auto">
+        <div className="w-[37.6875rem] flex flex-col p-4 lg:p-2 space-y-10 m-auto">
           <div className="flex items-center gap-3">
-            <div className="h-14 w-14 bg-secondary flex items-center justify-center rounded-full cursor-pointer">
+            <div className="h-9 w-9 lg:h-14 lg:w-14 bg-secondary flex items-center justify-center rounded-full cursor-pointer">
               <Link href="/dashboard">
                 <ArrowLeft className="h-5 text-white/80" />
               </Link>
             </div>
 
             <div className="space-y-1">
-              <h1 className="text-3xl font-bold">Add Task</h1>
-              <p className="font-medium text-lg text-white/80">
+              <h1 className="text-2xl lg:text-3xl font-bold">Add Task</h1>
+              <p className="text-xs font-medium lg:text-lg text-white/80">
                 Add your tasks to be registered.
               </p>
             </div>
