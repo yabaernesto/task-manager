@@ -4,9 +4,19 @@ import { Menu } from 'lucide-react'
 import { Button } from '../Button'
 import { Logo } from '../Logo'
 import Link from 'next/link'
+import { useState } from 'react'
+import { Sidebar } from './Sidebar'
 
 export function Header() {
-  function handleMenuClick() {}
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+
+  function handleSidebarOpen() {
+    setIsSidebarOpen(true)
+  }
+
+  function handleSidebarClose() {
+    setIsSidebarOpen(false)
+  }
 
   return (
     <>
@@ -35,11 +45,13 @@ export function Header() {
         </Link>
 
         <div className="flex lg:hidden">
-          <button type="button" onClick={handleMenuClick}>
+          <button type="button" onClick={handleSidebarOpen}>
             <Menu className="h-6 w-6 cursor-pointer text-white/80" />
           </button>
         </div>
       </header>
+
+      <Sidebar isOpen={isSidebarOpen} onClose={handleSidebarClose} />
     </>
   )
 }
