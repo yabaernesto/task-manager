@@ -1,36 +1,36 @@
-'use client'
+"use client";
 
-import { Menu } from 'lucide-react'
-import { Button } from '../Button'
-import { Logo } from '../Logo'
-import Link from 'next/link'
-import { useState } from 'react'
-import { Sidebar } from './Sidebar'
+import { Menu } from "lucide-react";
+import { Button } from "../Button";
+import { Logo } from "../Logo";
+import Link from "next/link";
+import { useState } from "react";
+import { Sidebar } from "./Sidebar";
 
 export function Header() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   function handleSidebarOpen() {
-    setIsSidebarOpen(true)
+    setIsSidebarOpen(true);
   }
 
   function handleSidebarClose() {
-    setIsSidebarOpen(false)
+    setIsSidebarOpen(false);
   }
 
   return (
     <>
-      <header className="flex items-center justify-between mb-2">
+      <header className="mb-2 flex items-center justify-between">
         <Logo className="cursor-pointer" />
 
-        <nav className="hidden lg:flex items-center gap-10 text-sm text-gray-200">
-          <Link href="/" className="font-bold text-lg text-[#B4ACF9]">
+        <nav className="hidden items-center gap-10 text-sm text-gray-200 lg:flex">
+          <Link href="/" className="text-lg font-bold text-[#B4ACF9]">
             About us
           </Link>
-          <Link href="/cases" className="font-bold text-lg text-white/80">
+          <Link href="/cases" className="text-lg font-bold text-white/80">
             Cases
           </Link>
-          <Link href="/resources" className="font-bold text-lg text-white/80">
+          <Link href="/resources" className="text-lg font-bold text-white/80">
             Resources
           </Link>
         </nav>
@@ -38,7 +38,7 @@ export function Header() {
         <Link href="/sign-in" className="hidden lg:flex">
           <Button
             type="button"
-            className="w-[136px] h-[50px] font-medium text-lg"
+            className="h-[50px] w-[136px] text-lg font-medium"
           >
             Sign In
           </Button>
@@ -53,5 +53,5 @@ export function Header() {
 
       <Sidebar isOpen={isSidebarOpen} onClose={handleSidebarClose} />
     </>
-  )
+  );
 }

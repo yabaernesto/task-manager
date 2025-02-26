@@ -1,13 +1,11 @@
-// biome-ignore lint/style/useImportType: <explanation>
-import * as React from 'react'
+import * as React from "react";
 
 type AddIconProps = React.SVGProps<SVGSVGElement> & {
-  onCopy?: React.ClipboardEventHandler<SVGSVGElement>
-}
+  onCopy?: React.ClipboardEventHandler<SVGSVGElement>;
+};
 
 export function AddIcon({ onCopy, ...rest }: AddIconProps) {
   return (
-    // biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
     <svg
       width={24}
       height={24}
@@ -28,5 +26,5 @@ export function AddIcon({ onCopy, ...rest }: AddIconProps) {
         fillOpacity={0.6}
       />
     </svg>
-  )
+  );
 }

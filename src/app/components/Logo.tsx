@@ -1,9 +1,8 @@
-// biome-ignore lint/style/useImportType: <explanation>
-import React from 'react'
+import React from "react";
 
 type LogoProps = React.SVGProps<SVGSVGElement> & {
-  onCopy?: React.ClipboardEventHandler<SVGSVGElement>
-}
+  onCopy?: React.ClipboardEventHandler<SVGSVGElement>;
+};
 
 export function Logo({ onCopy, ...rest }: LogoProps) {
   return (
@@ -27,5 +26,5 @@ export function Logo({ onCopy, ...rest }: LogoProps) {
         fillOpacity={0.86}
       />
     </svg>
-  )
+  );
 }

@@ -1,9 +1,8 @@
-// biome-ignore lint/style/useImportType: <explanation>
-import React from 'react'
+import React from "react";
 
 type HeroProps = React.SVGProps<SVGSVGElement> & {
-  onCopy?: React.ClipboardEventHandler<SVGSVGElement>
-}
+  onCopy?: React.ClipboardEventHandler<SVGSVGElement>;
+};
 
 export function Hero({ onCopy, ...rest }: HeroProps) {
   return (
@@ -413,5 +412,5 @@ export function Hero({ onCopy, ...rest }: HeroProps) {
         fill="#B4ACF9"
       />
     </svg>
-  )
+  );
 }

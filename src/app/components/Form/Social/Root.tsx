@@ -1,39 +1,39 @@
 // biome-ignore lint/style/useImportType: <explanation>
-import { ComponentProps, ReactNode } from 'react'
+import { ComponentProps, ReactNode } from "react";
 
-interface SpanIconOfText extends ComponentProps<'label'> {
-  children: ReactNode
+interface SpanIconOfText extends ComponentProps<"label"> {
+  children: ReactNode;
 }
 
 export function SpanText({ children, ...props }: SpanIconOfText) {
   return (
     <span
       {...props}
-      className="w-full py-2 px-4 font-medium text-base text-gray-200 cursor-pointer"
+      className="w-full cursor-pointer px-4 py-2 text-base font-medium text-gray-200"
     >
       {children}
     </span>
-  )
+  );
 }
 
 export function SpanIcon({ children, ...props }: SpanIconOfText) {
   return (
     <span
       {...props}
-      className="h-[60px] w-16 flex items-center justify-center bg-[#B4ACF9] rounded-s-lg"
+      className="flex h-[60px] w-16 items-center justify-center rounded-s-lg bg-[#B4ACF9]"
     >
       {children}
     </span>
-  )
+  );
 }
 
-type RootProps = ComponentProps<'div'>
+type RootProps = ComponentProps<"div">;
 
 export function Root(props: RootProps) {
   return (
     <div
       {...props}
-      className="w-full h-[60px] flex items-center bg-[#363041] rounded-md"
+      className="flex h-[60px] w-full items-center rounded-md bg-[#363041]"
     />
-  )
+  );
 }

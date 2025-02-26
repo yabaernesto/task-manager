@@ -1,3 +1,3 @@
-import { Root, SpanIcon, SpanText } from './Root'
+import { Root, SpanIcon, SpanText } from "./Root";
 
-export { Root, SpanIcon, SpanText }
+export { Root, SpanIcon, SpanText };
