@@ -38,7 +38,9 @@ export function ListTask() {
             className="no-clear w-full bg-secondary p-1 text-xs text-white/80 outline-none"
           />
         </div>
+
         <h1 className="text-xl font-bold">Tasks - {filteredTasks.length}</h1>
+
         <div className="h-[4.6875rem] space-y-2">
           {filteredTasks.length > 0 ? (
             filteredTasks.map((task) => (

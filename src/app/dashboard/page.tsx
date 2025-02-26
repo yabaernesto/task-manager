@@ -34,7 +34,7 @@ function Dashboard() {
         />
       </Root>
 
-      <main className="h-[85vh] w-full flex-initial items-center justify-center px-8 py-11">
+      <main className="h-[85vh] w-full px-8 py-11 lg:flex lg:items-center lg:justify-center">
         <div className="flex w-11/12 flex-col lg:w-3/4">
           <div className="space-y-2">
             <h1 className="text-2xl font-bold lg:text-3xl">My Tasks</h1>

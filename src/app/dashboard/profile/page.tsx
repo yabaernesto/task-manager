@@ -20,7 +20,7 @@ function MyProfile() {
         />
       </Root>
 
-      <main className="flex h-[85vh] items-center justify-center">
+      <main className="flex h-[85vh] items-center justify-center px-8">
         <div className="m-auto flex w-[33.75rem] flex-col space-y-8">
           <div className="flex items-center gap-3">
             <div className="flex h-14 w-14 cursor-pointer items-center justify-center rounded-full bg-secondary">
@@ -55,13 +55,13 @@ function MyProfile() {
 
             <div className="flex items-center justify-between">
               <div>
-                <div>
+                <div className="hidden lg:block">
                   <span className="text-xs font-bold text-white/80">
                     Display name
                   </span>
                   <h3 className="text-lg font-medium">Yaba Ernesto</h3>
                 </div>
-                <div>
+                <div className="hidden lg:block">
                   <span className="text-xs font-bold text-white/80">email</span>
                   <h3 className="text-lg font-medium">yabaernesto@gmail.com</h3>
                 </div>
