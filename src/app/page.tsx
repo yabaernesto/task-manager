@@ -6,10 +6,10 @@ import { Hero } from "./components/Hero";
 export default function Home() {
   return (
     <section className="px-6 lg:m-auto lg:w-full lg:px-20">
-      <div className="pt-8 lg:h-screen lg:space-y-2 lg:overflow-hidden">
+      <div className="flex h-screen flex-col pt-8 lg:space-y-2 lg:overflow-hidden">
         <Header />
 
-        <main className="flex flex-col space-y-4 lg:flex lg:w-full lg:flex-grow lg:flex-row lg:items-center lg:justify-between">
+        <main className="flex flex-col justify-end space-y-4 lg:w-full lg:flex-grow lg:flex-row lg:items-center lg:justify-around">
           <div className="mt-10 flex flex-col space-y-10">
             <div className="space-y-6">
               <h1 className="text-2xl font-bold lg:text-4xl">
@@ -37,7 +37,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-1 items-center justify-center">
+          <div className="flex flex-1 items-center justify-end">
             <Hero className="h-[30rem] w-[30rem]" />
           </div>
         </main>
