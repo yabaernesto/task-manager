@@ -6,7 +6,6 @@ type HeroProps = React.SVGProps<SVGSVGElement> & {
 
 export function Hero({ onCopy, ...rest }: HeroProps) {
   return (
-    // biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
     <svg
       width={560}
       height={560}

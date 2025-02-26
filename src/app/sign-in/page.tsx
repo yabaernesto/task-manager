@@ -39,7 +39,7 @@ const SignIn = () => {
   });
 
   return (
-    <div className="flex h-screen flex-col items-center justify-center">
+    <div className="flex h-screen flex-col items-center justify-center px-8">
       <div className="flex w-full flex-col gap-5 px-3 lg:w-96 lg:p-2">
         <div className="space-y-6">
           <Logo className="-ml-6 h-6" />

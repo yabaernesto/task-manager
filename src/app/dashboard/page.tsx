@@ -4,7 +4,7 @@ import { Root, ContainerDiv, ButtonTask } from "./header";
 import { ListTask } from "./task/ListTask";
 import { Profile } from "./profile/profile";
 import { MenuBar } from "./header/header";
-import { SidebarTasks } from "./task/SidebarTasks";
+import { SidebarTasks } from "./task/components/sidebarTasks";
 import { useState } from "react";
 
 function Dashboard() {
@@ -34,7 +34,7 @@ function Dashboard() {
         />
       </Root>
 
-      <main className="m-auto flex h-[85vh] w-full items-center justify-center pb-2">
+      <main className="h-[85vh] w-full flex-initial items-center justify-center px-8 py-11">
         <div className="flex w-11/12 flex-col lg:w-3/4">
           <div className="space-y-2">
             <h1 className="text-2xl font-bold lg:text-3xl">My Tasks</h1>

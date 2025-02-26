@@ -5,22 +5,22 @@ import { Button } from "../Button";
 import { Logo } from "../Logo";
 import Link from "next/link";
 import { useState } from "react";
-import { Sidebar } from "./Sidebar";
+import { Sidebar } from "./components/sidebar";
 
 export function Header() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   function handleSidebarOpen() {
-    setIsSidebarOpen(true);
+    setIsOpen(true);
   }
 
   function handleSidebarClose() {
-    setIsSidebarOpen(false);
+    setIsOpen(false);
   }
 
   return (
     <>
-      <header className="mb-2 flex items-center justify-between">
+      <header className="flex items-center justify-between">
         <Logo className="cursor-pointer" />
 
         <nav className="hidden items-center gap-10 text-sm text-gray-200 lg:flex">
@@ -51,7 +51,7 @@ export function Header() {
         </div>
       </header>
 
-      <Sidebar isOpen={isSidebarOpen} onClose={handleSidebarClose} />
+      <Sidebar isOpen={isOpen} onClose={handleSidebarClose} />
     </>
   );
 }

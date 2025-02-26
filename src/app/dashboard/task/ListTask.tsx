@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Check, Search, Trash2 } from "lucide-react";
+
 interface Task {
   id: string;
   title?: string;
