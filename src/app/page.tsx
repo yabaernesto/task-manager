@@ -10,7 +10,7 @@ export default function Home() {
         <Header />
 
         <main className="flex flex-col justify-end space-y-4 lg:w-full lg:flex-grow lg:flex-row lg:items-center lg:justify-around">
-          <div className="mt-10 flex flex-col space-y-10">
+          <div className="flex flex-col space-y-10">
             <div className="space-y-6">
               <h1 className="text-2xl font-bold lg:text-4xl">
                 <span className="font-bold leading-10 text-violet-300">
