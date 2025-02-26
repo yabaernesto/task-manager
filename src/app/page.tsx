@@ -38,7 +38,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-1 items-center justify-end">
-            <Hero className="h-[42rem] w-[42rem]" />
+            <Hero className="h-[40rem] w-[40rem]" />
           </div>
         </main>
       </div>
