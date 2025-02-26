@@ -1,64 +1,27 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Check, Search, Trash2 } from "lucide-react";
+import { useState, useContext } from "react";
+import { Check, Plus, Search, Trash2 } from "lucide-react";
+import { TaskContext } from "../context/task-context";
+import { useRouter } from "next/navigation";
 
-interface Task {
-  id: string;
-  title?: string;
-  description?: string;
-  isCompleted?: boolean;
-  time?: string;
-}
+export function ListTask() {
+  const router = useRouter();
+  const context = useContext(TaskContext);
 
-interface ListTaskProps {
-  tasks?: Task[];
-  onTaskClick?: (taskId: string) => void;
-  onDeleteTaskClick?: (taskId: string) => void;
-}
+  if (!context) {
+    throw new Error("AddTask deve ser usado dentro de um TaskProvider");
+  }
 
-export function ListTask({
-  tasks,
-  onTaskClick,
-  onDeleteTaskClick,
-}: ListTaskProps) {
-  const [localTasks, setLocalTasks] = useState<Task[]>([]);
-  const [searchTerm, setSearchTerm] = useState<string>("");
+  const { tasks, toggleTaskCompletion, deleteTask } = context;
+  const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(() => {
-    const storedTasks = localStorage.getItem("tasks");
-    if (storedTasks) {
-      setLocalTasks(JSON.parse(storedTasks));
-    } else {
-      setLocalTasks([]);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (localTasks.length > 0) {
-      localStorage.setItem("tasks", JSON.stringify(localTasks));
-    }
-  }, [localTasks]);
-
-  const filteredTasks = localTasks.filter(
-    (task) =>
-      task.title?.toLowerCase().includes(searchTerm.toLowerCase()) ?? false,
+  // Filtra as tarefas conforme a pesquisa
+  const filteredTasks = tasks.filter((task) =>
+    task.title.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
-  function handleTaskClick(taskId: string) {
-    const updatedTasks = localTasks.map((task) => {
-      if (task.id === taskId) {
-        return { ...task, isCompleted: !task.isCompleted };
-      }
-      return task;
-    });
-    setLocalTasks(updatedTasks);
-  }
-
-  function handleDeleteTaskClick(taskId: string) {
-    const updatedTasks = localTasks.filter((task) => task.id !== taskId);
-    setLocalTasks(updatedTasks);
-  }
+  const handleClick = () => router.push("/dashboard/addtask");
 
   return (
     <>
@@ -75,9 +38,7 @@ export function ListTask({
             className="no-clear w-full bg-secondary p-1 text-xs text-white/80 outline-none"
           />
         </div>
-
         <h1 className="text-xl font-bold">Tasks - {filteredTasks.length}</h1>
-
         <div className="h-[4.6875rem] space-y-2">
           {filteredTasks.length > 0 ? (
             filteredTasks.map((task) => (
@@ -86,33 +47,27 @@ export function ListTask({
                 className="flex h-full justify-between rounded-xl bg-secondary px-4 py-3"
               >
                 <div className="flex gap-2">
-                  {task.isCompleted ? (
-                    <>
-                      <button
-                        type="button"
-                        onClick={() => handleTaskClick(task.id)}
-                        className={`h-7 w-7 ${task.isCompleted && "line-through"}`}
-                      >
-                        <div className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-md border bg-primaryColor">
-                          <Check className="h-4 w-5 text-white/80" />
-                        </div>
-                      </button>
-                    </>
-                  ) : (
-                    <button
-                      type="button"
-                      onClick={() => handleTaskClick(task.id)}
-                      className={`h-7 w-7 ${task.isCompleted && "line-through"}`}
-                    >
+                  <button
+                    type="button"
+                    onClick={() => toggleTaskCompletion(task.id)}
+                    className="h-7 w-7"
+                  >
+                    {task.isCompleted ? (
+                      <div className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-md border bg-primaryColor">
+                        <Check className="h-4 w-5 text-white/80" />
+                      </div>
+                    ) : (
                       <div className="h-7 w-7 cursor-pointer rounded-md border border-primaryColor" />
-                    </button>
-                  )}
+                    )}
+                  </button>
 
                   <div className="flex flex-col">
                     <button
                       type="button"
-                      onClick={() => handleTaskClick(task.id)}
-                      className={`cursor-pointer text-lg font-medium text-white/80 ${task.isCompleted && "line-through"}`}
+                      onClick={() => toggleTaskCompletion(task.id)}
+                      className={`cursor-pointer text-lg font-medium text-white/80 ${
+                        task.isCompleted && "line-through"
+                      }`}
                     >
                       {task.title}
                     </button>
@@ -123,10 +78,7 @@ export function ListTask({
                 </div>
 
                 {task.isCompleted && (
-                  <button
-                    type="button"
-                    onClick={() => handleDeleteTaskClick(task.id)}
-                  >
+                  <button type="button" onClick={() => deleteTask(task.id)}>
                     <Trash2 className="h-5 w-5 cursor-pointer text-white/80" />
                   </button>
                 )}
@@ -135,6 +87,10 @@ export function ListTask({
           ) : (
             <p className="text-white/80">Nenhuma tarefa disponível</p>
           )}
+        </div>
+
+        <div className="m-auto flex h-16 w-16 cursor-pointer rounded-lg bg-[#B4ACF9] p-5 text-[#2E2938] lg:hidden">
+          <Plus size={24} onClick={handleClick} />
         </div>
       </div>
     </>

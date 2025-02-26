@@ -1,3 +1,4 @@
+import { TaskProvider } from "./dashboard/context/task-context";
 import "./globals.css";
 
 export default function RootLayout({
@@ -7,7 +8,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <TaskProvider>{children}</TaskProvider>
+      </body>
     </html>
   );
 }

@@ -1,5 +1,7 @@
 "use client";
 
+import { useState, useContext } from "react";
+import { TaskContext } from "../context/task-context";
 import { Root, ContainerDiv } from "../header";
 import { Profile } from "../profile/profile";
 import { MenuBar } from "../header/header";
@@ -7,66 +9,22 @@ import { ArrowLeft, CalendarDays } from "lucide-react";
 import * as RootInput from "../../components/Form/Input";
 import Link from "next/link";
 import { Button } from "@/app/components/Button";
-import { useState, useEffect } from "react";
-import { ListTask } from "./../task/ListTask";
-
-interface Task {
-  id: string;
-  title: string;
-  description: string;
-  isCompleted: boolean;
-  time: string;
-}
 
 function AddTask() {
+  const taskContext = useContext(TaskContext);
+
+  if (!taskContext) {
+    throw new Error("AddTask must be used within a TaskProvider");
+  }
+
+  const { addTask } = taskContext;
   const [task, setTask] = useState("");
   const [day, setDay] = useState("");
-  const [tasks, setTasks] = useState<Task[]>([]);
 
-  useEffect(() => {
-    const storedTasks = localStorage.getItem("tasks");
-    if (storedTasks) {
-      setTasks(JSON.parse(storedTasks));
-    }
-  }, []);
-
-  const addTask = () => {
-    if (!day.trim() || !task.trim()) {
-      return alert("Preencha a Tarefa e o Dia!");
-    }
-
-    const newTask = {
-      id: Date.now().toString(),
-      title: task,
-      description: "",
-      isCompleted: false,
-      time: day,
-    };
-
-    const updatedTasks = [...tasks, newTask];
-    setTasks(updatedTasks);
-    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
-
+  const handleAddTask = () => {
+    addTask(task, day);
     setTask("");
     setDay("");
-  };
-
-  const onTaskClick = (taskId: string) => {
-    const updatedTasks = tasks.map((task) => {
-      if (task.id === taskId) {
-        return { ...task, isCompleted: !task.isCompleted };
-      }
-      return task;
-    });
-
-    setTasks(updatedTasks);
-    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
-  };
-
-  const onDeleteTaskClick = (taskId: string) => {
-    const updatedTasks = tasks.filter((task) => task.id !== taskId);
-    setTasks(updatedTasks);
-    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
   };
 
   return (
@@ -82,7 +40,7 @@ function AddTask() {
         />
       </Root>
 
-      <main className="flex h-[85vh] items-center justify-center">
+      <main className="flex h-[85vh] items-center justify-center p-8">
         <div className="m-auto flex w-[37.6875rem] flex-col space-y-10 p-4 lg:p-2">
           <div className="flex items-center gap-3">
             <div className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-secondary lg:h-14 lg:w-14">
@@ -131,20 +89,12 @@ function AddTask() {
 
             <Button
               type="button"
-              onClick={addTask}
+              onClick={handleAddTask}
               className="h-[3.75rem] w-full text-lg font-medium text-[#2E2938]"
             >
               Create Task
             </Button>
           </form>
-
-          <div style={{ display: "none" }}>
-            <ListTask
-              tasks={tasks}
-              onTaskClick={onTaskClick}
-              onDeleteTaskClick={onDeleteTaskClick}
-            />
-          </div>
         </div>
       </main>
     </div>
