@@ -5,7 +5,7 @@ import { TaskContext } from "../context/task-context";
 import { Root, ContainerDiv } from "../header";
 import { Profile } from "../profile/profile";
 import { MenuBar } from "../header/header";
-import { ArrowLeft, CalendarDays } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import * as RootInput from "../../components/Form/Input";
 import Link from "next/link";
 import { Button } from "@/app/components/Button";
@@ -76,13 +76,12 @@ function AddTask() {
                 <RootInput.Label>Date</RootInput.Label>
                 <div className="flex h-[3.75rem] items-center rounded-md bg-secondary px-4 py-3">
                   <input
-                    type="text"
+                    type="date"
                     value={day}
                     onChange={(event) => setDay(event.target.value)}
                     placeholder="Today"
                     className="w-full bg-secondary text-xs font-medium text-white/80 outline-none"
                   />
-                  <CalendarDays className="h-5 w-5 cursor-pointer text-white/80" />
                 </div>
               </RootInput.FormRoot>
             </div>
