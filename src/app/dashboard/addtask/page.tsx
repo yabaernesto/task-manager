@@ -1,73 +1,73 @@
-'use client'
+"use client";
 
-import { Root, ContainerDiv } from '../header'
-import { Profile } from '../profile/profile'
-import { MenuBar } from '../header/header'
-import { ArrowLeft, CalendarDays } from 'lucide-react'
-import * as RootInput from '../../components/Form/Input'
-import Link from 'next/link'
-import { Button } from '@/app/components/Button'
-import { useState, useEffect } from 'react'
-import { ListTask } from './../task/ListTask'
+import { Root, ContainerDiv } from "../header";
+import { Profile } from "../profile/profile";
+import { MenuBar } from "../header/header";
+import { ArrowLeft, CalendarDays } from "lucide-react";
+import * as RootInput from "../../components/Form/Input";
+import Link from "next/link";
+import { Button } from "@/app/components/Button";
+import { useState, useEffect } from "react";
+import { ListTask } from "./../task/ListTask";
 
 interface Task {
-  id: string
-  title: string
-  description: string
-  isCompleted: boolean
-  time: string
+  id: string;
+  title: string;
+  description: string;
+  isCompleted: boolean;
+  time: string;
 }
 
 function AddTask() {
-  const [task, setTask] = useState('')
-  const [day, setDay] = useState('')
-  const [tasks, setTasks] = useState<Task[]>([])
+  const [task, setTask] = useState("");
+  const [day, setDay] = useState("");
+  const [tasks, setTasks] = useState<Task[]>([]);
 
   useEffect(() => {
-    const storedTasks = localStorage.getItem('tasks')
+    const storedTasks = localStorage.getItem("tasks");
     if (storedTasks) {
-      setTasks(JSON.parse(storedTasks))
+      setTasks(JSON.parse(storedTasks));
     }
-  }, [])
+  }, []);
 
   const addTask = () => {
     if (!day.trim() || !task.trim()) {
-      return alert('Preencha a Tarefa e o Dia!')
+      return alert("Preencha a Tarefa e o Dia!");
     }
 
     const newTask = {
       id: Date.now().toString(),
       title: task,
-      description: '',
+      description: "",
       isCompleted: false,
       time: day,
-    }
+    };
 
-    const updatedTasks = [...tasks, newTask]
-    setTasks(updatedTasks)
-    localStorage.setItem('tasks', JSON.stringify(updatedTasks))
+    const updatedTasks = [...tasks, newTask];
+    setTasks(updatedTasks);
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
 
-    setTask('')
-    setDay('')
-  }
+    setTask("");
+    setDay("");
+  };
 
   const onTaskClick = (taskId: string) => {
-    const updatedTasks = tasks.map(task => {
+    const updatedTasks = tasks.map((task) => {
       if (task.id === taskId) {
-        return { ...task, isCompleted: !task.isCompleted }
+        return { ...task, isCompleted: !task.isCompleted };
       }
-      return task
-    })
+      return task;
+    });
 
-    setTasks(updatedTasks)
-    localStorage.setItem('tasks', JSON.stringify(updatedTasks))
-  }
+    setTasks(updatedTasks);
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+  };
 
   const onDeleteTaskClick = (taskId: string) => {
-    const updatedTasks = tasks.filter(task => task.id !== taskId)
-    setTasks(updatedTasks)
-    localStorage.setItem('tasks', JSON.stringify(updatedTasks))
-  }
+    const updatedTasks = tasks.filter((task) => task.id !== taskId);
+    setTasks(updatedTasks);
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+  };
 
   return (
     <div>
@@ -76,38 +76,38 @@ function AddTask() {
           <MenuBar />
         </ContainerDiv>
         <Profile
-          className="h-14 w-14 rounded-full cursor-pointer"
+          className="h-14 w-14 cursor-pointer rounded-full"
           src="https://github.com/yabaernesto.png"
           name="Yaba Ernesto"
         />
       </Root>
 
-      <main className="h-[85vh] flex justify-center items-center">
-        <div className="w-[37.6875rem] flex flex-col p-4 lg:p-2 space-y-10 m-auto">
+      <main className="flex h-[85vh] items-center justify-center">
+        <div className="m-auto flex w-[37.6875rem] flex-col space-y-10 p-4 lg:p-2">
           <div className="flex items-center gap-3">
-            <div className="h-9 w-9 lg:h-14 lg:w-14 bg-secondary flex items-center justify-center rounded-full cursor-pointer">
+            <div className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-secondary lg:h-14 lg:w-14">
               <Link href="/dashboard">
                 <ArrowLeft className="h-5 text-white/80" />
               </Link>
             </div>
 
             <div className="space-y-1">
-              <h1 className="text-2xl lg:text-3xl font-bold">Add Task</h1>
-              <p className="text-xs font-medium lg:text-lg text-white/80">
+              <h1 className="text-2xl font-bold lg:text-3xl">Add Task</h1>
+              <p className="text-xs font-medium text-white/80 lg:text-lg">
                 Add your tasks to be registered.
               </p>
             </div>
           </div>
 
           <form className="space-y-2">
-            <div className="space-y-4 mb-8">
+            <div className="mb-8 space-y-4">
               <RootInput.FormRoot className="space-y-1">
                 <RootInput.Label className="font-medium">
                   Title task
                 </RootInput.Label>
                 <RootInput.InputFild
                   value={task}
-                  onChange={event => setTask(event.target.value)}
+                  onChange={(event) => setTask(event.target.value)}
                   id="task"
                   placeholder="Insert your task"
                   className="h-[3.75rem]"
@@ -116,15 +116,15 @@ function AddTask() {
 
               <RootInput.FormRoot>
                 <RootInput.Label>Date</RootInput.Label>
-                <div className="flex items-center h-[3.75rem] py-3 px-4 bg-secondary rounded-md">
+                <div className="flex h-[3.75rem] items-center rounded-md bg-secondary px-4 py-3">
                   <input
                     type="text"
                     value={day}
-                    onChange={event => setDay(event.target.value)}
+                    onChange={(event) => setDay(event.target.value)}
                     placeholder="Today"
-                    className="bg-secondary font-medium text-xs w-full outline-none text-white/80"
+                    className="w-full bg-secondary text-xs font-medium text-white/80 outline-none"
                   />
-                  <CalendarDays className="h-5 w-5 text-white/80 cursor-pointer" />
+                  <CalendarDays className="h-5 w-5 cursor-pointer text-white/80" />
                 </div>
               </RootInput.FormRoot>
             </div>
@@ -132,13 +132,13 @@ function AddTask() {
             <Button
               type="button"
               onClick={addTask}
-              className="h-[3.75rem] w-full text-[#2E2938] font-medium text-lg"
+              className="h-[3.75rem] w-full text-lg font-medium text-[#2E2938]"
             >
               Create Task
             </Button>
           </form>
 
-          <div style={{ display: 'none' }}>
+          <div style={{ display: "none" }}>
             <ListTask
               tasks={tasks}
               onTaskClick={onTaskClick}
@@ -148,7 +148,7 @@ function AddTask() {
         </div>
       </main>
     </div>
-  )
+  );
 }
 
-export default AddTask
+export default AddTask;

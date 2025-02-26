@@ -1,21 +1,21 @@
-'use client'
+"use client";
 
-import { Root, ContainerDiv, ButtonTask } from './header'
-import { ListTask } from './task/ListTask'
-import { Profile } from './profile/profile'
-import { MenuBar } from './header/header'
-import { SidebarTasks } from './task/SidebarTasks'
-import { useState } from 'react'
+import { Root, ContainerDiv, ButtonTask } from "./header";
+import { ListTask } from "./task/ListTask";
+import { Profile } from "./profile/profile";
+import { MenuBar } from "./header/header";
+import { SidebarTasks } from "./task/SidebarTasks";
+import { useState } from "react";
 
 function Dashboard() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   function handleOpenModal() {
-    setIsOpen(true)
+    setIsOpen(true);
   }
 
   function handleCloseModal() {
-    setIsOpen(false)
+    setIsOpen(false);
   }
 
   return (
@@ -28,17 +28,17 @@ function Dashboard() {
           <ButtonTask />
         </ContainerDiv>
         <Profile
-          className="h-14 w-14 rounded-full cursor-pointer"
+          className="h-14 w-14 cursor-pointer rounded-full"
           src="https://github.com/yabaernesto.png"
           name="Yaba Ernesto"
         />
       </Root>
 
-      <main className="h-[85vh] w-full flex justify-center items-center m-auto pb-2">
-        <div className="w-11/12 lg:w-3/4 flex flex-col">
+      <main className="m-auto flex h-[85vh] w-full items-center justify-center pb-2">
+        <div className="flex w-11/12 flex-col lg:w-3/4">
           <div className="space-y-2">
-            <h1 className="text-2xl lg:text-3xl font-bold">My Tasks</h1>
-            <p className="font-medium text-sm lg:text-lg text-white/80">
+            <h1 className="text-2xl font-bold lg:text-3xl">My Tasks</h1>
+            <p className="text-sm font-medium text-white/80 lg:text-lg">
               Register your tasks and have a better monitoring of your
               activities
             </p>
@@ -50,7 +50,7 @@ function Dashboard() {
 
       <SidebarTasks isOpen={isOpen} onClose={handleCloseModal} />
     </>
-  )
+  );
 }
 
-export default Dashboard
+export default Dashboard;
